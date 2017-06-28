@@ -19,7 +19,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.magdaleno.tenten.util.computer.exception.ExceptionMessages.INVALID_DATA_TYPE;
 
 /**
- * "RET"
+ * {@code RET}
  * Pop address from stack and set PC to address.
  */
 public class ReturnCommand implements CommandWithDataTable, CommandWithComputer {

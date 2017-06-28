@@ -18,11 +18,16 @@ public final class DataTable {
 
     private List<Value> mSymbolTable = new ArrayList<>();
 
+    /**
+     * Returns the latest {@code Value} of the stack stored at the end of the records.
+     * The returned {@code Value} is also removed in the stack.
+     *
+     * @return the latest value of the stack.
+     * @throws StackIsEmptyException if the stack has no records. Use PUSH command to add {@code Value} in the stack.
+     */
     public Value getLatestValue() throws StackIsEmptyException {
-//        System.out.println("mSymbolTable.size()="+mSymbolTable.size());
-//        System.out.println("mSymbolTable="+mSymbolTable.get(0));
         if(mSymbolTable.size()==0) {
-            throw new StackIsEmptyException("Stack table cannot be empty. Send PUSH command to add data in the stack.");
+            throw new StackIsEmptyException("Stack table cannot be empty. Send PUSH command to add Value in the stack.");
         }
 
         int locationOfLastValue = mSymbolTable.size()-1;
@@ -33,6 +38,10 @@ public final class DataTable {
         return value;
     }
 
+    /**
+     * Add new {@code Value} in the stack.
+     * @param value
+     */
     public void add(@NonNull Value value) {
         mSymbolTable.add(checkNotNull(value));
     }

@@ -17,7 +17,7 @@ import static com.magdaleno.tenten.util.computer.exception.ExceptionMessages.INV
  */
 
 /**
- * "CALL addr"
+ * {@code CALL addr}
  * Set the program counter (PC) to `addr.
  */
 public class MultiplyCommand implements CommandWithDataTable {

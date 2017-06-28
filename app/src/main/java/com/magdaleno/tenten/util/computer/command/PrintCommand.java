@@ -15,7 +15,7 @@ import com.magdaleno.tenten.util.computer.exception.StackIsEmptyException;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * "PRINT"
+ * {@code PRINT}
  * Pop value from stack and print it.
  */
 public class PrintCommand implements CommandWithDataTable, CommandWithOutput {

@@ -4,6 +4,9 @@ package com.magdaleno.tenten.util.computer.values;
  * Created by John Oliver "Jover" Magdaleno on 6/28/2017.
  */
 
+/**
+ * The {@code Value} equivalent of {@code String}.
+ */
 public class StringValue implements Value {
 
     private String mValue;
@@ -12,6 +15,9 @@ public class StringValue implements Value {
         this.mValue = value;
     }
 
+    /**
+     * @return the value of {@code Value}.
+     */
     public String getValue() {
         return mValue;
     }

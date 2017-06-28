@@ -13,7 +13,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 
 /**
- * "PUSH arg"
+ * {@code PUSH arg}
  * Push argument to the stack.
  */
 public class PushCommand implements CommandWithDataTable {

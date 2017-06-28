@@ -5,10 +5,5 @@ package com.magdaleno.tenten.util.computer.values;
  */
 
 public interface Value {
-
-    /**
-     * Value types override this to convert themselves to a string
-     * representation.
-     */
-//    String getString();
+    
 }
