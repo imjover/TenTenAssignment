@@ -13,7 +13,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 
 /**
- * "CALL addr"
+ * {@code CALL addr}
  * Set the program counter (PC) to `addr.
  */
 public class CallCommand implements CommandWithComputer {

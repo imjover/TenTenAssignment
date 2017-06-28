@@ -24,16 +24,31 @@ public class Computer {
     private Output mOutput;
     private boolean mContinueExecution = true;
 
+    /**
+     * Set the max length of the {@code Computer}'s stack.
+     * @param length
+     */
     public Computer(int length) {
         mCommands = Arrays.asList(new Command[100]); // new ArrayList<>(length);
         mDataTable = new DataTable();
         mOutput = new Output();
     }
 
+    /**
+     * Set the current address of the stack.
+     * @param address
+     */
     public void setAddress(int address) {
         this.mAddress = address;
     }
 
+    /**
+     * Insert new {@code Command} in the stack at the current address.
+     *
+     * <p>Note: Address is incremented at the end of the method,
+     * this is to allow adding of new {@code Command}s without setting the address everytime.</p>
+     * @param command
+     */
     public void insert(@NonNull final Command command) {
         checkNotNull(command);
         Command newCommand = command;
@@ -52,15 +67,27 @@ public class Computer {
         mAddress++; // increment address holder
     }
 
+    /**
+     * @return the {@code Output} of the {@code Computer}'s executed commands.
+     */
     public Output getOutput() {
         return mOutput;
     }
 
+    /**
+     * Initiates the execution of all inserted {@code Command}s in the {@code Computer}.
+     * @param address an {@code int} which is the starting point of the execution.
+     * @throws Exception
+     */
     public void execute(@NonNull final int address) throws Exception {
         setAddress(address);
         execute();
     }
 
+    /**
+     * Recursive method that executes all inserted {@code Command}s in the {@code Computer}.
+     * @throws Exception
+     */
     private void execute() throws Exception {
         final Command currentCommand = mCommands.get(mAddress);
         /**
@@ -68,15 +95,17 @@ public class Computer {
          * This is to allow modification of address within the Command.
          */
         mAddress++;
-
-        // TODO: Look for better way to execute the STOP command
-        // STOP Command will return FALSE
         currentCommand.execute();
+
+        // mContinueExecution will be set to false by the STOP command.
         if(mContinueExecution) {
             execute();
         }
     }
 
+    /**
+     * Signals the execution of {@code Command}s to stop.
+     */
     public void stopExecution() {
         mContinueExecution = false;
     }

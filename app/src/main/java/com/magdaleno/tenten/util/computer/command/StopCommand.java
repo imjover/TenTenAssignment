@@ -12,7 +12,7 @@ import com.magdaleno.tenten.util.computer.command.contract.CommandWithComputer;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
- * "STOP"
+ * {@code STOP}
  * Exit the program.
  */
 public class StopCommand implements CommandWithComputer {

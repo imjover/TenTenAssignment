@@ -13,6 +13,11 @@ final public class Output {
         return mOutput.toString();
     }
 
+    /**
+     * Appends {@code String} in the {@code Output}.
+     * @param string the value
+     * @return {@code Output}
+     */
     public Output append(String string) {
         if(mOutput==null)
             mOutput = new StringBuilder();
