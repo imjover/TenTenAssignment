@@ -18,4 +18,5 @@ This is a simple app based on TenTen's assignment.
 <li>With test units.</li>
 <li>With proper comments using Javadocs.</li>
 <li>and, hopefully, with a clean commit history.</li>
+<li>Added a simple note for pull request.</li>
 </ol>
