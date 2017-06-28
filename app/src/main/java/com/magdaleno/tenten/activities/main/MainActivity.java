@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.magdaleno.tenten.R;
+import com.magdaleno.tenten.activities.main.usecase.LoadComputerCommands;
+import com.magdaleno.tenten.base.UseCaseHandler;
 import com.magdaleno.tenten.util.ActivityUtils;
 
 /**
@@ -23,13 +25,15 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
 
+    /**
+     * Initialize here
+     */
     private void init() {
         // Set up the toolbar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(true);
-        ab.setDisplayShowHomeEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(false);
 
         MainFragment fragment =
                 (MainFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Create the presenter
-        mPresenter = new MainPresenter();
+        mPresenter = new MainPresenter(fragment,
+                UseCaseHandler.getInstance(),
+                new LoadComputerCommands());
     }
 }

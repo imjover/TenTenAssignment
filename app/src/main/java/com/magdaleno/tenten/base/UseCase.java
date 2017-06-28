@@ -65,6 +65,6 @@ public abstract class UseCase<Q extends UseCase.RequestValues, P extends UseCase
     public interface UseCaseCallback<R> {
         void onFinish(R response);
         void onError();
-        void onError(int message);
+        void onError(String message);
     }
 }

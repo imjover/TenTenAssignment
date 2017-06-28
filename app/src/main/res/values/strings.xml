@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TenTen Assignment</string>
+
+    <!-- Buttons -->
+    <string name="ok_btn">Ok</string>
+    <string name="run_btn">Run</string>
+
+    <!-- Labels -->
+    <string name="input_lbl">Input</string>
+    <string name="output_lbl">Output</string>
+    <string name="message_lbl">Message</string>
+    <string name="running_lbl">Running</string>
+
+    <!-- Messages -->
+    <string name="please_wait_msg">Please wait...</string>
+    <string name="error_msg">Sorry, an error occured. Please try again.</string>
 </resources>
