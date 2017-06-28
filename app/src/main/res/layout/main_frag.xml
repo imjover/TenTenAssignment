@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_run"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_alignParentBottom="true"
+        style="@style/form_button"
+        android:text="@string/run_btn"/>
+
+    <com.magdaleno.tenten.base.dynamicviewpager.ScrollViewForWrappingViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/btn_run" >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_xsmall"
+            style="@style/cardview_base" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:tabBackground="@color/colorAccent"
+                        app:tabIndicatorColor="@android:color/white"
+                        app:tabIndicatorHeight="4dp"
+                        app:tabMaxWidth="0dp"
+                        app:tabMode="fixed"
+                        app:tabGravity="fill" />
+                </android.support.design.widget.AppBarLayout>
+
+                <com.magdaleno.tenten.base.dynamicviewpager.WrappingViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </com.magdaleno.tenten.base.dynamicviewpager.ScrollViewForWrappingViewPager>
+
+</RelativeLayout>

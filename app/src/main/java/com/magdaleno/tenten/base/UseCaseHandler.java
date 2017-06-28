@@ -67,7 +67,7 @@ public class UseCaseHandler {
     }
 
     private <V extends UseCase.ResponseValue> void notifyError(
-            final UseCase.UseCaseCallback<V> useCaseCallback, final int message) {
+            final UseCase.UseCaseCallback<V> useCaseCallback, final String message) {
         mUseCaseScheduler.onError(useCaseCallback, message);
     }
 
@@ -93,7 +93,7 @@ public class UseCaseHandler {
         }
 
         @Override
-        public void onError(int message) {
+        public void onError(String message) {
             mUseCaseHandler.notifyError(mCallback, message);
         }
     }

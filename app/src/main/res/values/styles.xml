@@ -10,4 +10,19 @@
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+    <!-- Form Button -->
+    <style name="form_button">
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_button</item>
+        <item name="android:padding">@dimen/margin_medium</item>
+    </style>
+
+    <!-- CardView -->
+    <style name="cardview_base">
+        <item name="cardBackgroundColor">@color/cardView</item>
+        <item name="cardCornerRadius">@dimen/margin_xsmall</item>
+        <item name="cardElevation">@dimen/margin_xsmall</item>
+        <item name="cardUseCompatPadding">true</item>
+    </style>
 </resources>
